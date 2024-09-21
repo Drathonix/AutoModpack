@@ -18,12 +18,12 @@ public class VersionedCommandSource extends ServerCommandSource {
     }
 
 /*? if >=1.20 {*/
-   public static void sendFeedback(CommandContext<ServerCommandSource> context, Text message, boolean broadcastToOps) {
+   /*public static void sendFeedback(CommandContext<ServerCommandSource> context, Text message, boolean broadcastToOps) {
        context.getSource().sendFeedback(() -> message, broadcastToOps);
    }
-/*?} else {*/
-    /*public static void sendFeedback(CommandContext<ServerCommandSource> context, Text message, boolean broadcastToOps) {
+*//*?} else {*/
+    public static void sendFeedback(CommandContext<ServerCommandSource> context, Text message, boolean broadcastToOps) {
         context.getSource().sendFeedback(message, broadcastToOps);
     }
-*//*?}*/
+/*?}*/
 }

@@ -50,7 +50,7 @@ public abstract class ServerLoginNetworkHandlerMixin  {
             return;
         }
 
-        if (state != ServerLoginNetworkHandler.State.NEGOTIATING && state != ServerLoginNetworkHandler.State./*? if <1.20.2 {*/ /*READY_TO_ACCEPT *//*?} else {*/VERIFYING/*?}*/) {
+        if (state != ServerLoginNetworkHandler.State.NEGOTIATING && state != ServerLoginNetworkHandler.State./*? if <1.20.2 {*/ READY_TO_ACCEPT /*?} else {*//*VERIFYING*//*?}*/) {
             return;
         }
 

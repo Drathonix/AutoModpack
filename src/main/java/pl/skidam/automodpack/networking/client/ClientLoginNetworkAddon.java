@@ -48,7 +48,7 @@ public class ClientLoginNetworkAddon {
         try {
             CompletableFuture<@Nullable PacketByteBuf> future = handler.receive(this.client, this.handler, buf);
             future.thenAccept(resultBuf -> {
-                LoginQueryResponseC2SPacket packet = new LoginQueryResponseC2SPacket(queryId, /*? if <1.20.2 {*/ /*resultBuf *//*?} else {*/ new LoginResponsePayload(channelName, resultBuf) /*?}*/);
+                LoginQueryResponseC2SPacket packet = new LoginQueryResponseC2SPacket(queryId, /*? if <1.20.2 {*/ resultBuf /*?} else {*/ /*new LoginResponsePayload(channelName, resultBuf) *//*?}*/);
                 ((ClientLoginNetworkHandlerAccessor) this.handler).getConnection().send(packet);
             });
         } catch (Throwable e) {

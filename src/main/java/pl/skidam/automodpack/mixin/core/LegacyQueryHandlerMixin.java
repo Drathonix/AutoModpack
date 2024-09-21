@@ -3,10 +3,10 @@ package pl.skidam.automodpack.mixin.core;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 /*? if <1.20.2 {*/
-/*import net.minecraft.network.LegacyQueryHandler;
-*//*?} else {*/
-import net.minecraft.network.handler.LegacyQueryHandler;
-/*?}*/
+import net.minecraft.network.LegacyQueryHandler;
+/*?} else {*/
+/*import net.minecraft.network.handler.LegacyQueryHandler;
+*//*?}*/
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

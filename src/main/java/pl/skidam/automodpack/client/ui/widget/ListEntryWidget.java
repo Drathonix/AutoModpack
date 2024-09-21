@@ -10,8 +10,8 @@ import pl.skidam.automodpack.client.ui.versioned.VersionedText;
 import java.util.Map;
 
 /*? if <1.20 {*/
-/*import net.minecraft.client.util.math.MatrixStack;
-*//*?} elif <1.20.3 {*/
+import net.minecraft.client.util.math.MatrixStack;
+/*?} elif <1.20.3 {*/
 /*import net.minecraft.client.gui.DrawContext;
 *//*?}*/
 
@@ -21,10 +21,10 @@ public class ListEntryWidget extends AlwaysSelectedEntryListWidget<ListEntry> {
 
 	public ListEntryWidget(Map<String, String> changelogs, MinecraftClient client, int width, int height, int top, int bottom, int itemHeight) {
 		/*? if <1.20.3 {*/
-        /*super(client, width, height, top, bottom, itemHeight);
-        *//*?} else {*/
-		super(client, width, height - 90, top, itemHeight);
-		/*?}*/
+        super(client, width, height, top, bottom, itemHeight);
+        /*?} else {*/
+		/*super(client, width, height - 90, top, itemHeight);
+		*//*?}*/
 		this.centerListVertically = true;
 
 		this.clearEntries();
@@ -53,10 +53,10 @@ public class ListEntryWidget extends AlwaysSelectedEntryListWidget<ListEntry> {
 	}
 
 	/*? if <=1.20.2 {*/
-    /*public void render(/^? if <1.20 {^/  /^MatrixStack  ^//^?} else {^/ DrawContext /^?}^/  matrices, int mouseX, int mouseY, float delta) {
+    public void render(/*? if <1.20 {*/  MatrixStack  /*?} else {*/ /*DrawContext *//*?}*/  matrices, int mouseX, int mouseY, float delta) {
         super.render(matrices, mouseX, mouseY, delta);
     }
-    *//*?}*/
+    /*?}*/
 
 	public final ListEntry getEntryAtPos(double x, double y) {
 		int int_5 = MathHelper.floor(y - (double) getTop()) - this.headerHeight + (int) this.getScrollAmount() - 4;
@@ -66,10 +66,10 @@ public class ListEntryWidget extends AlwaysSelectedEntryListWidget<ListEntry> {
 
 	public int getTop() {
 		/*? if <1.20.3 {*/
-        /*return this.top;
-        *//*?} else {*/
-		return this.getY();
-		/*?}*/
+        return this.top;
+        /*?} else {*/
+		/*return this.getY();
+		*//*?}*/
 	}
 
 	@Override

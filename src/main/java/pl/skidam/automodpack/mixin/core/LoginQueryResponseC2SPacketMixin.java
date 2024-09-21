@@ -2,7 +2,7 @@ package pl.skidam.automodpack.mixin.core;
 
 import org.spongepowered.asm.mixin.Mixin;
 /*? if >=1.20.2 {*/
-import net.minecraft.network.PacketByteBuf;
+/*import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.packet.c2s.login.LoginQueryResponseC2SPacket;
 import net.minecraft.network.packet.c2s.login.LoginQueryResponsePayload;
 import net.minecraft.util.Identifier;
@@ -17,13 +17,13 @@ import pl.skidam.automodpack.networking.client.LoginResponsePayload;
 
 // TODO find better way to do this, its mixin only for 1.20.2 and above
 @Mixin(value = LoginQueryResponseC2SPacket.class, priority = 300)
-/*?} else {*/
-/*import pl.skidam.automodpack.init.Common;
+*//*?} else {*/
+import pl.skidam.automodpack.init.Common;
 @Mixin(Common.class)
-*//*?}*/
+/*?}*/
 public class LoginQueryResponseC2SPacketMixin {
 /*? if >=1.20.2 {*/
-    @Shadow
+    /*@Shadow
     @Final
     private static int MAX_PAYLOAD_SIZE;
 
@@ -43,5 +43,5 @@ public class LoginQueryResponseC2SPacketMixin {
 
         cir.setReturnValue(new LoginResponsePayload(automodpackID, PayloadHelper.read(buf, MAX_PAYLOAD_SIZE)));
     }
-/*?}*/
+*//*?}*/
 }

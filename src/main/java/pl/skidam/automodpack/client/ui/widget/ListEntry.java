@@ -8,10 +8,10 @@ import pl.skidam.automodpack.client.ui.versioned.VersionedMatrices;
 import pl.skidam.automodpack.client.ui.versioned.VersionedScreen;
 
 /*? if <1.20 {*/
-/*import net.minecraft.client.util.math.MatrixStack;
-*//*?} else {*/
-import net.minecraft.client.gui.DrawContext;
-/*?}*/
+import net.minecraft.client.util.math.MatrixStack;
+/*?} else {*/
+/*import net.minecraft.client.gui.DrawContext;
+*//*?}*/
 
 public class ListEntry extends AlwaysSelectedEntryListWidget.Entry<ListEntry> {
 
@@ -43,12 +43,12 @@ public class ListEntry extends AlwaysSelectedEntryListWidget.Entry<ListEntry> {
 
 	@Override
 	/*? if <1.20 {*/
-    /*public void render(MatrixStack matrices, int index, int y, int x, int entryWidth, int entryHeight, int mouseX, int mouseY, boolean hovered, float tickDelta) {
+    public void render(MatrixStack matrices, int index, int y, int x, int entryWidth, int entryHeight, int mouseX, int mouseY, boolean hovered, float tickDelta) {
         VersionedMatrices versionedMatrices = new VersionedMatrices();
-    *//*?} else {*/
-	public void render(DrawContext context, int index, int y, int x, int entryWidth, int entryHeight, int mouseX, int mouseY, boolean hovered, float tickDelta) {
+    /*?} else {*/
+	/*public void render(DrawContext context, int index, int y, int x, int entryWidth, int entryHeight, int mouseX, int mouseY, boolean hovered, float tickDelta) {
 		VersionedMatrices versionedMatrices = new VersionedMatrices(this.client, context.getVertexConsumers());
-	/*?}*/
+	*//*?}*/
 		versionedMatrices.push();
 
 		int centeredX = x + entryWidth / 2;

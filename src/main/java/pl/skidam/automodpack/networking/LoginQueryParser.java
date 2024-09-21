@@ -10,11 +10,11 @@ import net.minecraft.network.packet.c2s.login.LoginQueryResponseC2SPacket;
 import net.minecraft.network.packet.s2c.login.LoginQueryRequestS2CPacket;
 import net.minecraft.util.Identifier;
 /*? if >=1.20.2 {*/
-import pl.skidam.automodpack.networking.client.LoginResponsePayload;
+/*import pl.skidam.automodpack.networking.client.LoginResponsePayload;
 import pl.skidam.automodpack.networking.server.LoginRequestPayload;
 import net.minecraft.network.packet.c2s.login.LoginQueryResponsePayload;
 import net.minecraft.network.packet.s2c.login.LoginQueryRequestPayload;
-/*?}*/
+*//*?}*/
 
 public class LoginQueryParser {
 	public Packet<?> packet;
@@ -27,32 +27,32 @@ public class LoginQueryParser {
 		if (packet instanceof LoginQueryRequestS2CPacket packetS2C) {
 			this.packet = packetS2C;
 			/*? if <1.20.2 {*/
-			/*this.queryId = packetS2C.getQueryId();
+			this.queryId = packetS2C.getQueryId();
 			this.buf = packetS2C.getPayload();
 		    this.channelName = packetS2C.getChannel();
 	        this.success = true;
-            *//*?} else {*/
-			this.queryId = packetS2C.queryId();
+            /*?} else {*/
+			/*this.queryId = packetS2C.queryId();
 			LoginQueryRequestPayload payload = packetS2C.payload();
 			if (payload instanceof LoginRequestPayload loginRequestPayload) {
 				this.buf = loginRequestPayload.data();
 				this.channelName = loginRequestPayload.id();
 			}
-			/*?}*/
+			*//*?}*/
 		} else if (packet instanceof LoginQueryResponseC2SPacket packetC2S) {
 			this.packet = packetC2S;
 			/*? if <1.20.2 {*/
-            /*this.queryId = packetC2S.getQueryId();
+            this.queryId = packetC2S.getQueryId();
             this.buf = packetC2S.getResponse();
             this.success = true;
-			*//*?} else {*/
-			this.queryId = packetC2S.queryId();
+			/*?} else {*/
+			/*this.queryId = packetC2S.queryId();
 			LoginQueryResponsePayload payload = packetC2S.response();
 			if (payload instanceof LoginResponsePayload loginRequestPayload) {
 				this.buf = loginRequestPayload.data();
 				this.channelName = loginRequestPayload.id();
 			}
-			/*?}*/
+			*//*?}*/
 		} else {
 			success = false;
 			throw new IllegalArgumentException("Invalid packet type " + packet);
